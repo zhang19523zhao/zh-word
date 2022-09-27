@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结果</title>
+</head>
+<style>
+
+
+
+    .abc a{display:;width:80px;height:30px;border:1px solid #000;text-decoration:none;background: yellow}
+
+    .ui-table-head{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ui-h-label{
+        background-color: #eee;
+        color: #333;
+        width: 25%;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: 1px solid #ddd;
+        margin: 0 -1px -1px 0;
+    }
+
+    .ui-table-content{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ui-table-hd{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-right: none;
+        margin: 0 -1px -1px 0;
+    }
+    .ui-table-bd{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ui-t-item{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .ui-t-subitem{
+        text-align: center;
+        font-size: 12px;
+        border:1px solid #ddd;
+        margin: 0 -1px -1px 0;
+        width: 33.3333%;
+        min-height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+<body>
+<div class="ui-min-table">
+    <div class="ui-table-head">
+        <!--    <div class="ui-h-label">类型</div>-->
+        <div class="ui-h-label">姓名</div>
+        <div class="ui-h-label">时间</div>
+        <div class="ui-h-label">单词</div>
+        <div class="ui-h-label">中文</div>
+    </div>
+
+    {{ range . }}
+    <div class="ui-table-bd">
+        <div class="ui-t-item">
+            <div class="ui-t-subitem">{{ .Rname}}</div>
+            <div class="ui-t-subitem"> {{ .Rtime }} </div>
+            <div class="ui-t-subitem">{{ .Rword}}</div>
+            <div class="ui-t-subitem">{{ .Rchinese }}</div>
+        </div>
+    {{ end}}
+        <br>
+        <div class="abc">
+            <a href="/add">背单词</a>  <a href="/">返 回</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

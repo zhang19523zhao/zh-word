@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单词统计</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>时间</th>
+            <th>单词总数</th>
+        </tr>
+
+
+            {{ range . }}
+            <tr>
+            <td> {{ .Name }} </td>
+            <td> {{ .Time }} </td>
+            <td> {{ .Num }} </td>
+            </tr>
+            {{ end }}
+
+    </table>
+
+</body>
+</html>
